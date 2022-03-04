@@ -8,7 +8,7 @@ uint32_t get_index(memory_space *space,uint8_t* address){
   return ((uint32_t)(address-space->memory_start))/space->block_size;
 }
 
-void* ms_alloc(memory_space *space){
+void* msc_alloc(memory_space *space){
 
     void *ret_val=NULL;
     if(space->number_of_initialized_blocks<space->number_of_blocks)
@@ -37,7 +37,7 @@ void* ms_alloc(memory_space *space){
     return ret_val;  
 }
 
-void ms_free(memory_space *space,void *address){
+void msc_free(memory_space *space,void *address){
 
     if(space->memory_next!=NULL)
     {
